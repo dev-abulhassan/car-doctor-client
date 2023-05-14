@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import img from '../../assets/images/login/login.svg'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/Context';
 
 const Login = () => {
-
+   const { signIn } = useContext(AuthContext);
    const handleLogin = event => {
       event.preventDefault();
       const form = event.target;
@@ -16,7 +17,7 @@ const Login = () => {
             console.log(user);
          })
          .catch(error => console.log(error));
-      
+
    }
    return (
       <div className="container mx-auto py-20 px-10">
